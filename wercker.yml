@@ -1,0 +1,11 @@
+box: wercker/python
+no-response-timeout: 15
+build:
+  steps:
+    - pip-install:
+        requirements_file: ""
+        packages_list: "ansible"
+    - script:
+        cwd: ./
+        name: Check the role syntax.
+        code: ansible-playbook -i tests/inventory tests/test.yml --syntax-check

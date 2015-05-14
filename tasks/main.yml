@@ -1,0 +1,27 @@
+# Install (docker-py) python package as is a docker module dependency.
+- pip: name=docker-py version=1.1.0
+
+# tasks for running docker marathon
+- name: run marathon container
+  when: marathon_enabled == "Y"
+  docker:
+    name: marathon
+    image: "{{ marathon_image }}"
+    state: started
+    restart_policy: "{{ marathon_restart_policy }}"
+    ports:
+    - "{{ marathon_port }}:{{ marathon_port }}"
+    net: "{{ marathon_net }}"
+    env:
+      LIBPROCESS_IP: "{{ marathon_hostname }}"
+    command: "{{ marathon_command }}"
+    volumes:
+    - "/var/run/docker.sock:/tmp/docker.sock"
+
+# tasks for stoping docker marathon
+- name: stop marathon container
+  when: marathon_enabled == "N"
+  docker:
+    name: marathon
+    image: "{{ marathon_image }}"
+    state: stopped
