@@ -1,0 +1,16 @@
+# Test ephimeral environment
+############################
+base_box: "capgemini/apollo-mesos"
+ansible_playbook: "tests/test.yml"
+ansible_groups:
+  test_machine: machine1
+
+# Memory and Cpus setting
+##########################
+machine_mem : 256
+machine_cpus: 1
+
+# Machines IPs
+machine1_ip: "172.31.1.14"
+
+

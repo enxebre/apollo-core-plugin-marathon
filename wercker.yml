@@ -1,0 +1,14 @@
+box: wercker/python
+no-response-timeout: 15
+build:
+  steps:
+    - pip-install:
+        requirements_file: ""
+        packages_list: "ansible ansible-lint"
+    - script:
+        cwd: ./
+        name: Check the role syntax.
+        code: ansible-playbook -i tests/inventory tests/test.yml --syntax-check
+    - capgemini/ansible-lint:
+        name: run ansible-lint against the test.yml playbook
+        playbook: tests/test.yml
