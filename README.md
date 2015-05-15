@@ -1,7 +1,9 @@
 Marathon Apollo Plugin
 ======================
+[![Join the chat at https://gitter.im/Capgemini/Apollo](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Capgemini/Apollo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [![wercker status](https://app.wercker.com/status/139e779b40ee1492b5a28f28a14dc21c/m "wercker status")](https://app.wercker.com/project/bykey/139e779b40ee1492b5a28f28a14dc21c)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
 Apollo is a plugin based system.
 
